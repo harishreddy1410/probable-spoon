@@ -1,0 +1,11 @@
+// log in to ECR
+$(aws ecr get-login-password --region us-east-1 --profile developertwo)
+
+// build the docker image
+docker build -t dummydolphine:latest .
+
+// tag the docker image
+docker tag <IMAGE_NAME> <ECR_URL>
+
+// push to ECR
+docker push <ECR_URL>
